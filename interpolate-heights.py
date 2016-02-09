@@ -25,14 +25,14 @@ from scipy import interpolate as ip
 # file name with altitudes read as argument
 # grid, interpreted as a matrix: x is for rows(index j), and y is for columns (index i)
 # units: meters
-xmax= 10000
-xmin=-10000
-nx=500  # number of points for x
+xmax= 5000
+xmin=-5000
+nx=1000  # number of points for x
 #and then dx=(xmax-xmin)/nx
 
-ymax= 10000
-ymin=-10000
-ny=500 # number of points for y
+ymax= 5000
+ymin=-5000
+ny=1000 # number of points for y
 #and then dy=(ymax-ymin)/ny
 
 file0=sys.argv[1]
