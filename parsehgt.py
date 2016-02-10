@@ -8,7 +8,7 @@ Modified on mar feb  9 09:51:49 ART 2016
 Produce .dat ASCII files of SRTMv3 data from the original .hgt files. 
 Files are availables at https://dds.cr.usgs.gov/srtm/version2_1/SRTM3/
 
-usage: python2 [files-to-convert (space separated)]
+usage: python2 parsehgt.py [files-to-convert (space separated)]
 """
 
 import struct
