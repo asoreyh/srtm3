@@ -3,10 +3,10 @@
 Created on mar feb  9 16:29:49 ART 2016
 @author: asoreyh
 
-Produce a file with the distribution of distances between two points in an
+Produce a file with the distribution of distances between two points in a
 metric or interpolated altitude file. 
 
-usage: python2 dist.py [files-to-convert (space separated)]
+usage: python2 dist.py [base-file.or*]
 """
 
 import math
@@ -37,9 +37,9 @@ for a in f:
         continue
     points.append(b)
 f.close()
-# points is a list of objects class points that contains heights
+# points is a list of objects class points that contains coordinates and heights
+
 # calculate distances
-# 
 dist=[];
 l=len(points)
 print "Calculating distances..."

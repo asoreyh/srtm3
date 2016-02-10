@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jun  9 14:40:28 2013
+Created  on Sun Jun  9 14:40:28 COT 2013
 Modified on Thu Apr  3 15:59:52 COT 2014
 Modified on Mar Feb  9 10:31:03 ART 2016
 @author: asoreyh
