@@ -9,12 +9,12 @@ Produce an interpolated altitude file from parsed data of STRMv3
 mission. To obtain and process data see parsehgt.py
 
 usage:
-    python2 interpolate-heights.py original-heights-data.dat lat0 lon0 output_base_name
+    python2 interpolate-heights.py original-heights-data.dat lat0 lon0  distance np output_base_name
 
 produces:
     output_base_name.ord: data extracted from original file in Lat,Lon,Alt, centered at lat0,lon0
-    output_base_name.orm: data extracted from original file and converted to meters. centered at lat0,lon0
-    output_base_name.itp: interpolated data
+    output_base_name.orm: data extracted from original file and converted to meters. centered at lat0,lon0 
+    output_base_name.itp: interpolated data in a grid of +/- distance meters in each direction, having np points in each direction 
 """
 
 import math
@@ -25,20 +25,21 @@ from scipy import interpolate as ip
 # file name with altitudes read as argument
 # grid, interpreted as a matrix: x is for rows(index j), and y is for columns (index i)
 # units: meters
-xmax= 5000
-xmin=-5000
-nx=1000  # number of points for x
+
+xmax=int(sys.argv[4])
+xmin=-xmax
+nx=int(sys.argv[5])  # number of points for x
 #and then dx=(xmax-xmin)/nx
 
-ymax= 5000
-ymin=-5000
-ny=1000 # number of points for y
+ymax=xmax
+ymin=xmin
+ny=nx # number of points for y
 #and then dy=(ymax-ymin)/ny
 
 file0=sys.argv[1]
 lat0d=float(sys.argv[2])
 lon0d=float(sys.argv[3])
-file1=sys.argv[4]
+file1=sys.argv[6]
 
 lat0=math.radians(lat0d)
 lon0=math.radians(lon0d)
